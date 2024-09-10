@@ -24,14 +24,14 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E presionada");
+            Debug.Log("E pressed");
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {
-                Debug.Log("Objeto detectado");
+                Debug.Log("Objetc detected");
                 if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)) 
                 {
-                    Debug.Log("Interaccion enviada");
+                    Debug.Log("Interaction sent");
                     interactObj.Interact();
                 }
             }
