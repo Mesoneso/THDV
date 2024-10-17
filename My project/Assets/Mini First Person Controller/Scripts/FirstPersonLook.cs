@@ -4,8 +4,7 @@ public class FirstPersonLook : MonoBehaviour
 {
     [SerializeField]
     Transform character;
-    public float sensitivity = 2;
-    public float smoothing = 1.5f;
+    public PlayerDataSO playerData;
 
     Vector2 velocity;
     Vector2 frameVelocity;
@@ -27,8 +26,8 @@ public class FirstPersonLook : MonoBehaviour
     {
         // Get smooth velocity.
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
-        frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / smoothing);
+        Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * playerData.sensitivity);
+        frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / playerData.smoothing);
         velocity += frameVelocity;
         velocity.y = Mathf.Clamp(velocity.y, -90, 90);
 

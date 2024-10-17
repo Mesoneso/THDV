@@ -11,7 +11,7 @@ interface IInteractable
 public class Interactor : MonoBehaviour
 {
     [SerializeField] Transform InteractorSource;
-    [SerializeField] float InteractRange;
+    public PlayerDataSO playerData;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Interactor : MonoBehaviour
         {
             Debug.Log("E pressed");
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+            if (Physics.Raycast(r, out RaycastHit hitInfo, playerData.InteractRange))
             {
                 Debug.Log("Objetc detected");
                 if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)) 
@@ -40,6 +40,6 @@ public class Interactor : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(InteractorSource.position, InteractorSource.forward * InteractRange);
+        Gizmos.DrawRay(InteractorSource.position, InteractorSource.forward * playerData.InteractRange);
     }
 }

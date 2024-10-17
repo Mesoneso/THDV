@@ -29,6 +29,7 @@ public class FirstPersonAudio : MonoBehaviour
     public AudioSource crouchStartAudio, crouchedAudio, crouchEndAudio;
     public AudioClip[] crouchStartSFX, crouchEndSFX;
 
+    [SerializeField] private PlayerDataSO playerData;
     AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio, crouchedAudio };
 
 
@@ -72,7 +73,7 @@ public class FirstPersonAudio : MonoBehaviour
             {
                 SetPlayingMovingAudio(crouchedAudio);
             }
-            else if (character.IsRunning)
+            else if (character.playerData.IsRunning)
             {
                 SetPlayingMovingAudio(runningAudio);
             }
