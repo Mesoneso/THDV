@@ -9,23 +9,26 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int healthRegenTime = 3;
     [SerializeField] int healthRegenValue = 1;
     [SerializeField] int maxHealth = 300;
-    private bool beingSeen;
+    private float timer = 0;
+    
     public void Damage(int damage)
     {
-        
         health -= damage;
+        timer = healthRegenTime;
     }
-    public void OnBeholderView(bool beingSeen)
-    {
-      this.beingSeen = beingSeen;
-    }
+   
   private void Update()
     {
+        
         Debug.Log(health);
-        if (!beingSeen && health < maxHealth)
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if (timer <= 0 && health < maxHealth)
         {
             health += healthRegenValue;
-
         }
       
     }

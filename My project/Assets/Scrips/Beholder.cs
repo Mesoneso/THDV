@@ -23,12 +23,9 @@ public class Beholder : MonoBehaviour
             if (hit.transform.TryGetComponent<PlayerHealth>(out var playerHealth))
             {
                 playerHealth.Damage(damage);
-                //playerHealth.OnBeholderView(true);
+                
             }
-            else
-            {
-                //playerHealth.OnBeholderView(false);
-            }
+
            float distance = Vector3.Distance(transform.position, hit.transform.position);
             Debug.DrawRay(transform.position, transform.forward * distance, color: Color.red);
         }
