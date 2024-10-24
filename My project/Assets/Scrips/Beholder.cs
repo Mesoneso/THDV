@@ -10,6 +10,8 @@ public class Beholder : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float visionRange = 15;
     [SerializeField] private int damage = 10;
+    public bool playerDetected = false;
+
 
     private void Update()
     {
@@ -23,7 +25,7 @@ public class Beholder : MonoBehaviour
             if (hit.transform.TryGetComponent<PlayerHealth>(out var playerHealth))
             {
                 playerHealth.Damage(damage);
-                
+                playerHealth.Watched();
             }
 
            float distance = Vector3.Distance(transform.position, hit.transform.position);

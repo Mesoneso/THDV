@@ -8,8 +8,12 @@ public class PlayerUi : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] FirstPersonLook fpsLook;
+    [SerializeField] private Beholder beholder;
+    [SerializeField] private GameObject openEyes;
 
     private bool isInPause = false;
+
+   
 
     // Update is called once per frame
     private void Update()
@@ -31,5 +35,14 @@ public class PlayerUi : MonoBehaviour
                 fpsLook.enabled = true;
             }
         }
+        if (beholder.playerDetected == true)
+        {
+            openEyes.SetActive(true);
+        }
+        else 
+        {
+            openEyes.SetActive(false);
+        }
+
     }
 }
