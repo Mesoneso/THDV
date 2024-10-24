@@ -9,7 +9,7 @@ public class Beholder : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private float visionRange = 15;
-    [SerializeField] private int damage = 1;
+    [SerializeField] private int damage = 10;
 
     private void Update()
     {

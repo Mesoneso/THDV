@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
         {
             health += healthRegenValue;
         }
+
+
       
     }
     IEnumerator Regeneration()
