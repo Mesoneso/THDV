@@ -11,11 +11,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int maxHealth = 300;
     private float timer = 0;
     private bool isBeingWatched = false;
-    
+    public float HealthPer => health/(float)maxHealth;
+
     public void Damage(int damage)
     {
         health -= damage;
         timer = healthRegenTime;
+        if (health <= 0)
+        {
+            health = 0;
+        }
     }
 
     public void Watched()

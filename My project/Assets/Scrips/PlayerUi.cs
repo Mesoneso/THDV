@@ -8,7 +8,11 @@ public class PlayerUi : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] FirstPersonLook fpsLook;
-    [SerializeField] private Beholder beholder;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private Image healthImg;
+    [SerializeField] private Color fullHealthColor;
+    [SerializeField] private Color noHealthColor;
+    [SerializeField] private BeholderManager beholderManager;
     [SerializeField] private GameObject openEyes;
 
     private bool isInPause = false;
@@ -35,14 +39,10 @@ public class PlayerUi : MonoBehaviour
                 fpsLook.enabled = true;
             }
         }
-        if (beholder.playerDetected == true)
-        {
-            openEyes.SetActive(true);
-        }
-        else 
-        {
-            openEyes.SetActive(false);
-        }
+      
+            openEyes.SetActive(beholderManager.IsPlayerWatched());
+      
 
+        healthImg.color = Color.Lerp(noHealthColor, fullHealthColor, playerHealth.HealthPer);
     }
 }
