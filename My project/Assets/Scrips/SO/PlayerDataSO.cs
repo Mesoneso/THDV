@@ -17,4 +17,8 @@ public class PlayerDataSO : ScriptableObject
     public float smoothing = 1.5f;
 
     public float InteractRange = 3;
+
+    public int healthRegenTime = 3;
+    public int healthRegenValue = 1;
+    public int maxHealth = 1000;
 }

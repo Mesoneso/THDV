@@ -20,15 +20,4 @@ public class BeholderManager : MonoBehaviour
         }
         return false;
     }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

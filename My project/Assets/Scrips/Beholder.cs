@@ -25,7 +25,7 @@ public class Beholder : MonoBehaviour
             if (hit.transform.TryGetComponent<PlayerHealth>(out var playerHealth))
             {
                 playerHealth.Damage(damage);
-                playerHealth.Watched();
+                
                 playerDetected = true;
             }
             else

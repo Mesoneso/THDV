@@ -487,6 +487,42 @@ MonoBehaviour:
     animator: {fileID: 0}
   - animationTrigger: Button_B
     animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 2972404655756014085}
+  - animationTrigger: Button_B
+    animator: {fileID: 9126444597491891732}
+  - animationTrigger: Button_B
+    animator: {fileID: 5981154303628201390}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
+  - animationTrigger: Button_B
+    animator: {fileID: 0}
 --- !u!1 &4572306944579422401
 GameObject:
   m_ObjectHideFlags: 0

@@ -151,5 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  visionRange: 15
-  damage: 1
+  visionRange: 20
+  damage: 3
+  playerDetected: 0

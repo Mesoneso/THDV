@@ -5,28 +5,29 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int health = 300;
-    [SerializeField] int healthRegenTime = 3;
-    [SerializeField] int healthRegenValue = 1;
-    [SerializeField] int maxHealth = 300;
+    public PlayerDataSO playerData;
+    [SerializeField] int health = 1000;
+    
+    
     private float timer = 0;
-    private bool isBeingWatched = false;
-    public float HealthPer => health/(float)maxHealth;
+    
+    public float HealthPer => health/(float)playerData.maxHealth;
+
+    [SerializeField] private Transform spawnLocation;
 
     public void Damage(int damage)
     {
         health -= damage;
-        timer = healthRegenTime;
+        timer = playerData.healthRegenTime;
         if (health <= 0)
         {
-            health = 0;
+            
+            transform.position = spawnLocation.position;
+            health = playerData.maxHealth;
         }
     }
 
-    public void Watched()
-    {
-        isBeingWatched=true;
-    }
+    
    
   private void Update()
     {
@@ -37,9 +38,9 @@ public class PlayerHealth : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if (timer <= 0 && health < maxHealth)
+        if (timer <= 0 && health < playerData.maxHealth)
         {
-            health += healthRegenValue;
+            health += playerData.healthRegenValue;
         }
 
 
@@ -47,8 +48,8 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator Regeneration()
     {
-        health += healthRegenValue;
-        yield return new WaitForSeconds(healthRegenTime);
+        health += playerData.healthRegenValue;
+        yield return new WaitForSeconds(playerData.healthRegenTime);
     }
     
 }
