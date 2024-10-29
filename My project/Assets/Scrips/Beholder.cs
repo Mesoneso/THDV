@@ -7,9 +7,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Beholder : MonoBehaviour
 {
+    public BeholderDataSO beholderData;
+
     [SerializeField] private Transform player;
-    [SerializeField] private float visionRange = 15;
-    [SerializeField] private int damage = 10;
+    
     public bool playerDetected = false;
 
 
@@ -20,11 +21,11 @@ public class Beholder : MonoBehaviour
 
         RaycastHit hit;
        
-        if (Physics.Raycast(transform.position, transform.forward, out hit, visionRange))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, beholderData.visionRange))
         {
             if (hit.transform.TryGetComponent<PlayerHealth>(out var playerHealth))
             {
-                playerHealth.Damage(damage);
+                playerHealth.Damage(beholderData.damage);
                 
                 playerDetected = true;
             }
