@@ -29,11 +29,16 @@ public class Interactor : MonoBehaviour
             if (Physics.Raycast(r, out RaycastHit hitInfo, playerData.InteractRange))
             {
                 Debug.Log("Objetc detected");
-                if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)) 
+                IInteractable[] interactables = hitInfo.collider.gameObject.GetComponents<IInteractable>();
+                for (int i = 0; i < interactables.Length; i++)
                 {
+
                     Debug.Log("Interaction sent");
-                    interactObj.Interact();
+                    interactables[i].Interact();
+
+
                 }
+
             }
         }
     }
