@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -32,11 +33,15 @@ public class PlayerUi : MonoBehaviour
             {
                 Time.timeScale = 0;
                 fpsLook.enabled = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else 
             { 
                 Time.timeScale = 1;
                 fpsLook.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
       
