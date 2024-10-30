@@ -32,11 +32,8 @@ public class Interactor : MonoBehaviour
                 IInteractable[] interactables = hitInfo.collider.gameObject.GetComponents<IInteractable>();
                 for (int i = 0; i < interactables.Length; i++)
                 {
-
                     Debug.Log("Interaction sent");
                     interactables[i].Interact();
-
-
                 }
 
             }
