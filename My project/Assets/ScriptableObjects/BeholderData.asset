@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427ac9b3f33b9444483351ef4bcbcb85, type: 3}
   m_Name: BeholderData
   m_EditorClassIdentifier: 
-  visionRange: 20
+  visionRange: 30
   damage: 3
