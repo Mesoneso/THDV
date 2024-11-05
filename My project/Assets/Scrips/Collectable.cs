@@ -6,6 +6,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     [SerializeField] private MeshRenderer model;
+    
   
 
     private void CollectableObject()

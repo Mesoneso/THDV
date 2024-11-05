@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
   private void Update()
     {
         
-        Debug.Log(health);
+        
         if (timer > 0)
         {
             timer -= Time.deltaTime;

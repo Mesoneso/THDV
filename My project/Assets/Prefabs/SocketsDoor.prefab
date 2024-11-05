@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098588afc79632744a9bf1693f833a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socketsNeeded: 22
+  socketsNeeded: 24
 --- !u!1 &8425978472139287624
 GameObject:
   m_ObjectHideFlags: 0
