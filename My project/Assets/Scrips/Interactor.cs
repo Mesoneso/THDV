@@ -24,15 +24,15 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E pressed");
+            
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
             if (Physics.Raycast(r, out RaycastHit hitInfo, playerData.InteractRange))
             {
-                Debug.Log("Objetc detected");
+                
                 IInteractable[] interactables = hitInfo.collider.gameObject.GetComponents<IInteractable>();
                 for (int i = 0; i < interactables.Length; i++)
                 {
-                    Debug.Log("Interaction sent");
+                    
                     interactables[i].Interact();
                 }
 
