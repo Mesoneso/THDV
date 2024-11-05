@@ -41,7 +41,7 @@ public class Beholder : MonoBehaviour
         else
         {
             
-            Debug.Log("no se ve el jugador");
+            
         }
 
     }
