@@ -6,6 +6,8 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     [SerializeField] private MeshRenderer model;
+  
+
     private void CollectableObject()
     {
         model.enabled = false;
@@ -20,5 +22,5 @@ public class Collectable : MonoBehaviour
             CollectableObject();
         }
     }
-    
-}
+
+    }
